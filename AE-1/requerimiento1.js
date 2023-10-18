@@ -30,6 +30,7 @@
             contenedor.appendChild(telefonoInput);
 
             /*Añadir dos radios button con 4 opciones*/
+            /*Primer radio button*/
             const generoLabel = document.createElement("label");
             generoLabel.textContent = "Género:";
             contenedor.appendChild(generoLabel);
@@ -39,12 +40,34 @@
                 const radioInput = document.createElement("input");
                 radioInput.type = "radio";
                 radioInput.name = "genero";
+                radioInput.id = optionText;
                 contenedor.appendChild(radioInput);
 
                 const radioLabel = document.createElement("label");
                 radioLabel.textContent = optionText;
+                radioLabel.setAttribute("for",optionText)
                 contenedor.appendChild(radioLabel);
             });
+
+            /*Segundo radio button*/ 
+            const modalidadLabel = document.createElement("label");
+            modalidadLabel.textContent = "Modalidad de trabajo:";
+            contenedor.appendChild(modalidadLabel);
+
+            const modalidadOptions = ["Presencial", "Teletrabajo", "Hibrido", "Indiferente"];
+            modalidadOptions.forEach(function (optionText) {
+                const radioInput = document.createElement("input");
+                radioInput.type = "radio";
+                radioInput.name = "modalidad";
+                radioInput.id = optionText;
+                contenedor.appendChild(radioInput);
+
+                const radioLabel = document.createElement("label");
+                radioLabel.textContent = optionText;
+                radioLabel.setAttribute("for",optionText)
+                contenedor.appendChild(radioLabel);
+            });
+
             //Añadir 5 checkboxes
             const interesesLabel = document.createElement("label");
             interesesLabel.textContent = "Intereses:";
@@ -55,10 +78,12 @@
                 const checkboxInput = document.createElement("input");
                 checkboxInput.type = "checkbox";
                 checkboxInput.name = "intereses";
+                checkboxInput.id= optionText;
                 contenedor.appendChild(checkboxInput);
 
                 const checkboxLabel = document.createElement("label");
                 checkboxLabel.textContent = optionText;
+                checkboxLabel.setAttribute("for",optionText)
                 contenedor.appendChild(checkboxLabel);
             });
 
