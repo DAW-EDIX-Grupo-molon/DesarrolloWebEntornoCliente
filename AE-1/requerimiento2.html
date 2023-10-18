@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,56 @@
     <script type="text/javascript" src="requerimiento2.js"></script>
 
 </head>
+
 <body>
-    <div id="contenedor"></div>
+    <h2>Modo 1</h2>
+    <div id="contenedor">
+        <form method="get" id="form1">
+            <label for="nombre">Nombre</label>
+            <br>
+            <input type="text" id="nombre" name="nombre">
+            <br>
+            <label for="direccion">Dirección</label>
+            <br>
+            <input type="text" id="direccion" name="direccion">
+            <br>
+            <label for="telefono">Teléfono</label>
+            <br>
+            <input type="text" id="telefono" name="telefono">
+            <br>
+            <label for="email">E-mail</label>
+            <br>
+            <input type="text" id="email" name="email">
+            <br>
+            <label for="pizzaSize">Elija el tamaño de la pizza(*):</label>
+            <br>
+            <input type="radio" id="pequeña" name="size" value="0">
+            <label for="pequeña">Pizza pequeña</label>
+            <br>
+            <input type="radio" id="mediana" name="size" value="5">
+            <label for="mediana">Pizza mediana</label>
+            <br>
+            <input type="radio" id="grande" name="size" value="10">
+            <label for="grande">Pizza grande</label>
+            <br>
+            <label for="ingredients">Elija los ingredientes para la pizza(*):</label>
+            <br>
+            <input type="checkbox" id="Beacon" name="Beacon" value="1">
+            <label for="Beacon">Beacon</label>
+            <br>
+            <input type="checkbox" id="Atún" name="Atún" value="1">
+            <label for="Atún">Atún</label>
+            <br>
+            <input type="checkbox" id="Salchichas" name="Salchichas" value="1">
+            <label for="Salchichas">Salchichas</label>
+            <br>
+            <input type="checkbox" id="Huevo" name="Huevo" value="1">
+            <label for="Huevo">Huevo</label>
+            <br>
+            <button type="submit" id="submit" value="Submit">Submit</button>
+        </form>
+        <h2>Modo 2 - Manipulando arbol DOM</h2>
+    </div>
 </body>
+
 </html>

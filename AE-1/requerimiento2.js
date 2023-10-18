@@ -2,13 +2,11 @@
 function addElements() {
     const contenedor = document.getElementById("contenedor");
 
-    const form =document.createElement("form");
+    const form = document.createElement("form");
     form.method = "get";
     form.id = "form1"
     contenedor.appendChild(form)
 
-    /*Añadimos los primero elementos que nos piden que son los campos de texto: DNI, NOmbre, Apellidos, Direccion y Telefono */
-    
     function createLabel(id, text) {
         let label = document.createElement("label");
         label.setAttribute("for", id);
@@ -32,28 +30,28 @@ function addElements() {
 
     createLabel("nombre", "Nombre");
     createBr();
-    createInput("nombre", "text", "nombre","");
+    createInput("nombre", "text", "nombre", "");
     createBr();
     createLabel("direccion", "Dirección");
     createBr();
-    createInput("direccion", "text", "direccion","");
+    createInput("direccion", "text", "direccion", "");
     createBr();
     createLabel("telefono", "Teléfono");
     createBr();
-    createInput("telefono", "text", "telefono","");
+    createInput("telefono", "text", "telefono", "");
     createBr();
     createLabel("email", "E-mail");
     createBr();
-    createInput("email", "text", "email","");
+    createInput("email", "text", "email", "");
     createBr();
     createLabel("pizzaSize", "Elija el tamaño de la pizza(*):");
     createBr();
 
     const sizes = ["pequeña", "mediana", "grande"];
 
-    for(let indice in sizes) {
-        let optionText = sizes [indice];
-        createInput(optionText, "radio", "size", indice*5)
+    for (let indice in sizes) {
+        let optionText = sizes[indice];
+        createInput(optionText, "radio", "size", indice * 5)
         createLabel(optionText, "Pizza " + optionText)
         createBr();
     }
@@ -68,7 +66,7 @@ function addElements() {
         createBr();
     });
 
-    const btn =document.createElement("button");
+    const btn = document.createElement("button");
     btn.type = "submit";
     btn.id = "submit";
     btn.value = "Submit";
@@ -76,5 +74,4 @@ function addElements() {
     form.appendChild(btn);
 
 }
-
 window.onload = addElements;
