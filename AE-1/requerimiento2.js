@@ -11,11 +11,12 @@ function addElements() {
         contenedor.appendChild(label);
     }
 
-    function createInput(id, type) {
+    function createInput(id, type, name, value) {
         let myInput = document.createElement("input");
         myInput.type = type;
         myInput.id = id;
-
+        myInput.name = name;
+        myInput.value = value;
         contenedor.appendChild(myInput);
     }
 
@@ -24,111 +25,43 @@ function addElements() {
         contenedor.appendChild(br);
     }
 
-    createLabel("nombre", "Nombre");
-    createInput("nombre", "text");
+    createLabel("nombre", "Nombre(*)");
     createBr();
-    createInput("direccion", "text");
-    createLabel("direccion", "Dirección");
+    createInput("nombre", "text", "nombre", "");
     createBr();
-    createLabel("telefono", "Teléfono");
-    createInput("telefono", "phone");
+    createLabel("direccion", "Dirección(*)");
     createBr();
-    createLabel("email", "E-mail");
-    createInput("email", "email");
+    createInput("direccion", "text", "direccion", "");
+    createBr();
+    createLabel("telefono", "Teléfono(*)");
+    createBr();
+    createInput("telefono", "text", "telefono", 0);
+    createBr();
+    createLabel("email", "E-mail(*)");
+    createBr();
+    createInput("email", "text", "email", "");
+    createBr();
+    createLabel("pizzaSize", "Elija el tamaño de la pizza(*):");
     createBr();
 
+    const sizes = ["pequeña", "mediana", "grande"];
 
-    /*Añadir dos radios button con 4 opciones*/
-    /*Primer radio button*/
-    const generoLabel = document.createElement("label");
-    generoLabel.textContent = "Género:";
-    contenedor.appendChild(generoLabel);
+    for(let indice in sizes) {
+        let optionText = sizes [indice];
+        createInput(optionText, "radio", "size", indice*5)
+        createLabel(optionText, "Pizza " + optionText)
+        createBr();
+    }
 
-    const generoOptions = ["Masculino", "Femenino", "Otro", "No especificar"];
-    generoOptions.forEach(function (optionText) {
-        const radioInput = document.createElement("input");
-        radioInput.type = "radio";
-        radioInput.name = "genero";
-        radioInput.id = optionText;
-        contenedor.appendChild(radioInput);
+    createLabel("ingredients", "Elija los ingredientes para la pizza(*):");
+    createBr();
 
-        const radioLabel = document.createElement("label");
-        radioLabel.textContent = optionText;
-        radioLabel.setAttribute("for", optionText)
-        contenedor.appendChild(radioLabel);
-    });
-
-    /*Segundo radio button*/
-    const modalidadLabel = document.createElement("label");
-    modalidadLabel.textContent = "Modalidad de trabajo:";
-    contenedor.appendChild(modalidadLabel);
-
-    const modalidadOptions = ["Presencial", "Teletrabajo", "Hibrido", "Indiferente"];
-    modalidadOptions.forEach(function (optionText) {
-        const radioInput = document.createElement("input");
-        radioInput.type = "radio";
-        radioInput.name = "modalidad";
-        radioInput.id = optionText;
-        contenedor.appendChild(radioInput);
-
-        const radioLabel = document.createElement("label");
-        radioLabel.textContent = optionText;
-        radioLabel.setAttribute("for", optionText)
-        contenedor.appendChild(radioLabel);
-    });
-
-    //Añadir 5 checkboxes
-    const interesesLabel = document.createElement("label");
-    interesesLabel.textContent = "Intereses:";
-    contenedor.appendChild(interesesLabel);
-
-    const interesesOptions = ["Deporte", "Arte", "Música", "Lectura", "Viajes"];
+    const interesesOptions = ["Beacon", "Atún", "Salchichas", "Huevo"];
     interesesOptions.forEach(function (optionText) {
-        const checkboxInput = document.createElement("input");
-        checkboxInput.type = "checkbox";
-        checkboxInput.name = "intereses";
-        checkboxInput.id = optionText;
-        contenedor.appendChild(checkboxInput);
-
-        const checkboxLabel = document.createElement("label");
-        checkboxLabel.textContent = optionText;
-        checkboxLabel.setAttribute("for", optionText)
-        contenedor.appendChild(checkboxLabel);
+        createInput(optionText, "checkbox", optionText, 1)
+        createLabel(optionText, optionText)
+        createBr();
     });
-
-    //Añadir dos imagenes
-    var img1 = document.createElement("img");
-    img1.src = "imagen/toyota.png";
-    contenedor.appendChild(img1);
-
-    var img2 = document.createElement("img");
-    img2.src = "imagen/lol.jpeg";
-    contenedor.appendChild(img2);
-
-    // Añadir un Select
-    const selectLabel = document.createElement("label");
-    selectLabel.textContent = "Elige un turno de trabajo:";
-    contenedor.appendChild(selectLabel);
-
-    const selectInput = document.createElement("select");
-    const selectOptions = ["Mañana", "Tarde", "Noche"];
-    selectOptions.forEach(function (optionText) {
-        const option = document.createElement("option");
-        option.value = optionText;
-        option.textContent = optionText;
-        selectInput.appendChild(option);
-    });
-    contenedor.appendChild(selectInput);
-
-    // Añadir un Textarea
-    const textareaLabel = document.createElement("label");
-    textareaLabel.textContent = "Comentarios:";
-    contenedor.appendChild(textareaLabel);
-
-    const textareaInput = document.createElement("textarea");
-    textareaInput.rows = 4;
-    textareaInput.cols = 50;
-    contenedor.appendChild(textareaInput);
 }
 
 window.onload = addElements;
