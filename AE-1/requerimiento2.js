@@ -2,13 +2,18 @@
 function addElements() {
     const contenedor = document.getElementById("contenedor");
 
-    /*Añadimos los primero elementos que nos piden que son los campos de texto: DNI, NOmbre, Apellidos, Direccion y Telefono */
+    const form =document.createElement("form");
+    form.method = "get";
+    form.id = "form1"
+    contenedor.appendChild(form)
 
+    /*Añadimos los primero elementos que nos piden que son los campos de texto: DNI, NOmbre, Apellidos, Direccion y Telefono */
+    
     function createLabel(id, text) {
         let label = document.createElement("label");
         label.setAttribute("for", id);
         label.textContent = text;
-        contenedor.appendChild(label);
+        form.appendChild(label);
     }
 
     function createInput(id, type, name, value) {
@@ -17,29 +22,29 @@ function addElements() {
         myInput.id = id;
         myInput.name = name;
         myInput.value = value;
-        contenedor.appendChild(myInput);
+        form.appendChild(myInput);
     }
 
     function createBr() {
         let br = document.createElement("br");
-        contenedor.appendChild(br);
+        form.appendChild(br);
     }
 
     createLabel("nombre", "Nombre");
     createBr();
-    createInput("nombre", "text", "nombre", "Pepe");
+    createInput("nombre", "text", "nombre","");
     createBr();
     createLabel("direccion", "Dirección");
     createBr();
-    createInput("direccion", "text", "direccion", "Avenida España");
+    createInput("direccion", "text", "direccion","");
     createBr();
     createLabel("telefono", "Teléfono");
     createBr();
-    createInput("telefono", "text", "telefono", 666666666);
+    createInput("telefono", "text", "telefono","");
     createBr();
     createLabel("email", "E-mail");
     createBr();
-    createInput("email", "text", "email", "prueba@gmail.com");
+    createInput("email", "text", "email","");
     createBr();
     createLabel("pizzaSize", "Elija el tamaño de la pizza(*):");
     createBr();
@@ -62,6 +67,14 @@ function addElements() {
         createLabel(optionText, optionText)
         createBr();
     });
+
+    const btn =document.createElement("button");
+    btn.type = "submit";
+    btn.id = "submit";
+    btn.value = "Submit";
+    btn.textContent = "Submit";
+    form.appendChild(btn);
+
 }
 
 window.onload = addElements;
