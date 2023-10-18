@@ -25,21 +25,21 @@ function addElements() {
         contenedor.appendChild(br);
     }
 
-    createLabel("nombre", "Nombre(*)");
+    createLabel("nombre", "Nombre");
     createBr();
-    createInput("nombre", "text", "nombre", "");
+    createInput("nombre", "text", "nombre", "Pepe");
     createBr();
-    createLabel("direccion", "Dirección(*)");
+    createLabel("direccion", "Dirección");
     createBr();
-    createInput("direccion", "text", "direccion", "");
+    createInput("direccion", "text", "direccion", "Avenida España");
     createBr();
-    createLabel("telefono", "Teléfono(*)");
+    createLabel("telefono", "Teléfono");
     createBr();
-    createInput("telefono", "text", "telefono", 0);
+    createInput("telefono", "text", "telefono", 666666666);
     createBr();
-    createLabel("email", "E-mail(*)");
+    createLabel("email", "E-mail");
     createBr();
-    createInput("email", "text", "email", "");
+    createInput("email", "text", "email", "prueba@gmail.com");
     createBr();
     createLabel("pizzaSize", "Elija el tamaño de la pizza(*):");
     createBr();
