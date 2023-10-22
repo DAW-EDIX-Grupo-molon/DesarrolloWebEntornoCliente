@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script type="text/javascript" src="requerimiento2.js"></script>
-
+    <title>Requerimiento 2</title>
+    <script type="text/javascript" src="requerimiento2.js" defer></script>
 </head>
 
 <body>
-    <h2>Modo 1</h2>
+    <h2>PizzaPlanet</h2>
     <div id="contenedor">
         <form method="get" id="form1">
             <label for="nombre">Nombre</label>
@@ -31,32 +30,33 @@
             <br>
             <label for="pizzaSize">Elija el tamaño de la pizza(*):</label>
             <br>
-            <input type="radio" id="pequeña" name="size" value="0">
+            <input type="radio" id="pequeña" name="size" value="5">
             <label for="pequeña">Pizza pequeña</label>
             <br>
-            <input type="radio" id="mediana" name="size" value="5">
+            <input type="radio" id="mediana" name="size" value="10">
             <label for="mediana">Pizza mediana</label>
             <br>
-            <input type="radio" id="grande" name="size" value="10">
-            <label for="grande">Pizza grande</label>
+            <input type="radio" id="grande" name="size" value="15">
+            <label for="grande" id="grandeLabel">Pizza grande</label>
             <br>
-            <label for="ingredients">Elija los ingredientes para la pizza(*):</label>
+            <label for="ingredients">Elija tus ingredientes extra para la pizza:</label>
             <br>
-            <input type="checkbox" id="Beacon" name="Beacon" value="1">
-            <label for="Beacon">Beacon</label>
+            <input type="checkbox" id="Beacon" name="ingredientes" value="1">
+            <label for="Bacon">Bacon +1€</label>
             <br>
-            <input type="checkbox" id="Atún" name="Atún" value="1">
-            <label for="Atún">Atún</label>
+            <input type="checkbox" id="Atún" name="ingredientes" value="1">
+            <label for="Atún">Atún +1€</label>
             <br>
-            <input type="checkbox" id="Salchichas" name="Salchichas" value="1">
-            <label for="Salchichas">Salchichas</label>
+            <input type="checkbox" id="Salchichas" name="ingredientes" value="1">
+            <label for="Salchichas">Salchichas +1€</label>
             <br>
-            <input type="checkbox" id="Huevo" name="Huevo" value="1">
-            <label for="Huevo">Huevo</label>
+            <input type="checkbox" id="Huevo" name="ingredientes" value="1">
+            <label for="Huevo" id="huevoLabel">Huevo +1€</label>
             <br>
-            <button type="submit" id="submit" value="Submit">Submit</button>
+            <button type="submit" id="submit" value="Submit">Procesar Pedido</button>
         </form>
-        <h2>Modo 2 - Manipulando arbol DOM</h2>
+        <div id="resultado"></div>
+        <!-- <h2>Modo 2 - Manipulando arbol DOM</h2> -->
     </div>
 </body>
 
