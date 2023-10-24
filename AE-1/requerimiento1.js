@@ -6,7 +6,8 @@ const contenedor = document.getElementById("contenedor");
     const formulario = document.createElement("form");
     formulario.setAttribute("id", "formulario");
     contenedor.appendChild(formulario);
-        // Añadimos los primero elementos que nos piden que son los campos de texto: DNI, NOmbre, Apellidos, Direccion y Telefono 
+
+        // Añadimos los primero elementos que nos piden que son los campos de texto: DNI, Nombre, Apellidos, Dirección y Teléfono 
         const dniInput = document.createElement("input");
             dniInput.type = "text";
             dniInput.placeholder = "DNI";
@@ -28,7 +29,7 @@ const contenedor = document.getElementById("contenedor");
             formulario.appendChild(direccionInput);
 
         const telefonoInput = document.createElement("input");
-            telefonoInput.type = "text";
+            telefonoInput.type = "number";
             telefonoInput.placeholder = "Teléfono";
             formulario.appendChild(telefonoInput);
 
@@ -57,7 +58,7 @@ const contenedor = document.getElementById("contenedor");
             modalidadLabel.textContent = "Modalidad de trabajo:";
             formulario.appendChild(modalidadLabel);
 
-            const modalidadOptions = ["Presencial", "Teletrabajo", "Hibrido", "Indiferente"];
+            const modalidadOptions = ["Presencial", "Teletrabajo", "Híbrido", "Indiferente"];
             modalidadOptions.forEach(function (optionText) {
                 const radioInput = document.createElement("input");
                 radioInput.type = "radio";
@@ -90,7 +91,7 @@ const contenedor = document.getElementById("contenedor");
                 formulario.appendChild(checkboxLabel);
             });
 
-        //Añadir dos imagenes
+        //Añadir dos imágenes
             var img1 = document.createElement("img");
             img1.src = "imagen/toyota.png";
             formulario.appendChild(img1);
