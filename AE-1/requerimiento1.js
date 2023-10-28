@@ -68,7 +68,7 @@ function addElements() {
         radioLabel.textContent = optionText;
         radioLabel.setAttribute("for", optionText)
         formulario.appendChild(radioLabel);
-        
+
         const radioInput = document.createElement("input");
         radioInput.type = "radio";
         radioInput.name = "modalidad";
