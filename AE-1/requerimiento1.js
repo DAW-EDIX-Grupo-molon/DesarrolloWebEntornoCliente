@@ -29,7 +29,7 @@ function addElements() {
     formulario.appendChild(direccionInput);
 
     const telefonoInput = document.createElement("input");
-    telefonoInput.type = "text";
+    telefonoInput.type = "number";
     telefonoInput.placeholder = "Teléfono";
     formulario.appendChild(telefonoInput);
 
