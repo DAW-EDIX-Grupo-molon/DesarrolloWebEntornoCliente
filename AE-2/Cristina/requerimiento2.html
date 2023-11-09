@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requerimiento 2</title>
+    <script type="text/javascript" src="requerimiento2.js" defer></script>
+</head>
+
+<body>
+    <h2>PizzaPlanet</h2>
+    <div id="contenedor">
+        <form id="myForm" onsubmit="validacion()">
+            <label for="nombre">Nombre</label>
+            <br>
+            <input type="text" id="nombre" name="nombre">
+            <br>
+            <label for="direccion">Dirección</label>
+            <br>
+            <input type="text" id="direccion" name="direccion">
+            <br>
+            <label for="telefono">Teléfono</label>
+            <br>
+            <input type="text" id="telefono" name="telefono">
+            <br>
+            <label for="email">E-mail</label>
+            <br>
+            <input type="text" id="email" name="email">
+            <br>
+            <div id="dynamicItems"></div>
+            <button type="button" id="procesar">Procesar Pedido</button>
+            <button type="button" id="refresh">Refrescar página</button>
+        </form>
+        <div id="resultado"></div>
+    </div>
+</body>
+
+</html>

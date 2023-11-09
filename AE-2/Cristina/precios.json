@@ -1,0 +1,38 @@
+{
+    "tamañosPizza": [
+        {
+            "tamaño": "pequeña",
+            "precio": 5
+        },
+        {
+            "tamaño": "mediana",
+            "precio": 10
+        },
+        {
+            "tamaño": "familiar",
+            "precio": 15
+        }
+    ],
+    "ingredientesPizza": [
+        {
+            "ingrediente": "huevo",
+            "precio": 3
+        },
+        {
+            "ingrediente": "atun",
+            "precio": 1
+        },
+        {
+            "ingrediente": "jamon",
+            "precio": 1
+        },
+        {
+            "ingrediente": "anchoa",
+            "precio": 3
+        },
+        {
+            "ingrediente": "piña",
+            "precio": 1
+        }
+    ]
+}
