@@ -1,0 +1,37 @@
+{
+    "pizzeria":{
+        "tamaños":[
+            {
+                "tamaño":"pequeña",
+                "precio":5
+            },{
+                "tamaño":"mediana",
+                "precio":10
+            },{
+                "tamaño":"grande",
+                "precio":15
+            }
+        ],
+        "ingredientes":[
+            {
+                "ingrediente":"tomate",
+                "precio":1
+            },{
+                "ingrediente":"jamón york",
+                "precio":0.5
+            },{
+                "ingrediente":"champiñones",
+                "precio":0.5
+            },{
+                "ingrediente":"queso",
+                "precio":2
+            },{
+                "ingrediente":"cebolla",
+                "precio":1
+            },{
+                "ingrediente":"berengena",
+                "precio":2
+            }
+        ]
+    }
+}
