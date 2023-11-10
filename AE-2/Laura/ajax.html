@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="ajax.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulario de Pedido de Pizza</h1>
+    <form id="pizzaForm">
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+        </div>
+
+        <div>
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" required>
+        </div>
+
+        <div>
+            <label for="telefono">Teléfono:</label>
+            <input type="text" id="telefono" required>
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+        </div>
+
+        <div>
+            <label>Tamaño de la Pizza:</label>
+            <input type="radio" name="tamaño" value="pequeña" required> Pequeña (5€)
+            <input type="radio" name="tamaño" value="mediana" required> Mediana (10€)
+            <input type="radio" name="tamaño" value="grande" required> Grande (15€)
+        </div>
+
+        <div>
+            <label>Ingredientes de la Pizza:</label>
+            <input type="checkbox" name="ingredientes" value="tomate"> Tomate (+1€)
+            <input type="checkbox" name="ingredientes" value="queso"> Queso (+1€)
+            <input type="checkbox" name="ingredientes" value="jamón"> Jamón (+1€)
+            <input type="checkbox" name="ingredientes" value="champiñones"> Champiñones (+1€)
+        </div>
+
+        <div>
+            <button type="button" onclick="calcularPrecio()">Procesar el Pedido</button>
+        </div>
+
+        <div>
+            <p>Total del Pedido: <span id="totalPedido">0€</span></p>
+        </div>
+    </form>
+</body>
+</html>

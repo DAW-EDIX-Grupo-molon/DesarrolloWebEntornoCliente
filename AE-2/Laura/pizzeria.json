@@ -1,0 +1,38 @@
+{
+    "tamañosP": [
+        {
+            "tamaño": "pequeña",
+            "precio": 5
+        },
+        {
+            "tamaño": "mediana",
+            "precio": 10
+        },
+        {
+            "tamaño": "familiar",
+            "precio": 15
+        }
+    ],
+    "ingredientesP": [
+        {
+            "ingrediente": "cebolla",
+            "precio": 1
+        },
+        {
+            "ingrediente": "pimiento",
+            "precio": 1
+        },
+        {
+            "ingrediente": "carne",
+            "precio": 1
+        },
+        {
+            "ingrediente": "bacon",
+            "precio": 3
+        },
+        {
+            "ingrediente": "queso",
+            "precio": 1
+        }
+    ]
+}
