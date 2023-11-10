@@ -1,7 +1,6 @@
-// Variable para almacenar los datos cargados del servidor
+
 let data;
 
-// Constantes simulando la conexión a servidor para la práctica
 const URL = "http://127.0.0.1:5500/AE-2/Laura/ajax.html";
 const RECURSO = "pizzeria.json";
 
@@ -21,7 +20,6 @@ function cargar() {
         if (this.readyState == 4) {
             if (this.status == 200) {
                 procesarRespuesta(this.responseText);
-                // No es necesario llamar a calcularPrecio aquí, ya que se llama después de procesarRespuesta
             } else {
                 alert("No se han podido cargar los elementos");
             }
@@ -39,13 +37,11 @@ function procesarRespuesta(responseText) {
     // Cargar ingredientes
     loadIngredients(data.ingredientesP);
 
-    // Puedes realizar otras acciones según sea necesario, como actualizar dinámicamente el formulario
 }
 
 function loadPizzaSizes(sizes) {
     const tamañoContainer = document.getElementById('tamañoContainer');
 
-    // Limpiar contenido existente
     tamañoContainer.innerHTML = '';
 
     sizes.forEach(tamaño => {
@@ -68,7 +64,6 @@ function loadPizzaSizes(sizes) {
 function loadIngredients(ingredients) {
     const ingredientesContainer = document.getElementById('ingredientesContainer');
 
-    // Limpiar contenido existente
     ingredientesContainer.innerHTML = '';
 
     ingredients.forEach(ingrediente => {
@@ -101,10 +96,8 @@ function calcularPrecio() {
         return;
     }
 
-    
     const precioBase = data.tamañosP.find(tamaño => tamaño.tamaño === tamañoPizza.value)?.precio || 0;
 
-    
     const precioIngredientes = Array.from(ingredientes).reduce((total, ingrediente) => {
         const precio = data.ingredientesP.find(i => i.ingrediente === ingrediente.value)?.precio || 0;
         return total + precio;
@@ -124,30 +117,54 @@ function procesarPedido() {
     const tamañoPizza = document.querySelector('input[name="tamaño"]:checked');
     const ingredientes = document.querySelectorAll('input[name="ingredientes"]:checked');
 
-
     if (!tamañoPizza || ingredientes.length === 0) {
         alert("Error: Debes seleccionar un tamaño y al menos un ingrediente antes de procesar el pedido.");
         return;
     }
-
 
     const tamañoSeleccionado = data.tamañosP.find(tamaño => tamaño.tamaño === tamañoPizza.value);
     const ingredientesSeleccionados = Array.from(ingredientes).map(ingrediente => {
         return data.ingredientesP.find(i => i.ingrediente === ingrediente.value);
     });
 
-    // Calcular el precio total 
-    const precioTotal = tamañoSeleccionado.precio + ingredientesSeleccionados.reduce((total, ingrediente) => total + ingrediente.precio, 0);
+    obtenerPreciosServidor(tamañoSeleccionado, ingredientesSeleccionados);
 
-    enviarPedidoAlServidor({
-        nombre,
-        direccion,
-        telefono,
-        email,
-        tamaño: tamañoSeleccionado,
-        ingredientes: ingredientesSeleccionados,
-        precioTotal
-    });
+}
 
-    alert("¡Pedido procesado con éxito!");
+function obtenerPreciosServidor(tamañoPizza, ingredientesSeleccionados) {
+    const xmlHttp = new XMLHttpRequest();
+
+    xmlHttp.open('POST', URL + 'obtenerPrecios', true);
+    xmlHttp.setRequestHeader('Content-type', 'application/json');
+
+    const requestData = {
+        tamañoPizza: tamañoPizza.value,
+        ingredientes: ingredientesSeleccionados.map(ingrediente => ingrediente.ingrediente)
+    };
+
+    xmlHttp.onreadystatechange = function () {
+        if (this.readyState == 4) {
+            if (this.status == 200) {
+                const precios = JSON.parse(this.responseText);
+                calcularPrecioTotal(tamañoPizza, ingredientesSeleccionados, precios);
+            } else {
+                alert("Error al obtener precios del servidor");
+            }
+        }
+    };
+
+    xmlHttp.send(JSON.stringify(requestData));
+}
+
+function calcularPrecioTotal(tamañoPizza, ingredientesSeleccionados, precios) {
+    const precioBase = precios.precioBase || 0;
+
+    const precioIngredientes = ingredientesSeleccionados.reduce((total, ingrediente) => {
+        const precio = precios.ingredientes.find(i => i.ingrediente === ingrediente.ingrediente)?.precio || 0;
+        return total + precio;
+    }, 0);
+
+    const precioTotal = precioBase + precioIngredientes;
+
+    document.getElementById('totalPedido').textContent = precioTotal + '€';
 }
