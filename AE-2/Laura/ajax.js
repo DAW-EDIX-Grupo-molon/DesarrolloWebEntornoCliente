@@ -1,12 +1,12 @@
 
 let data;
 
-const URL = "http://127.0.0.1:5500/AE-2/Laura/ajax.html";
+const URL = "http://127.0.0.1:5500/AE-2/Laura/";
 const RECURSO = "pizzeria.json";
 
 document.addEventListener("DOMContentLoaded", function () {
     cargar();
-    actualizar.onclick = cargar;
+    //actualizar.onclick = cargar;
     submit.onclick = procesarPedido;
 });
 
@@ -155,6 +155,7 @@ function obtenerPreciosServidor(tamañoPizza, ingredientesSeleccionados) {
 
     xmlHttp.send(JSON.stringify(requestData));
 }
+
 
 function calcularPrecioTotal(tamañoPizza, ingredientesSeleccionados, precios) {
     const precioBase = precios.precioBase || 0;

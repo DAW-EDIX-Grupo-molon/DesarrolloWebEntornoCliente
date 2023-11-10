@@ -30,27 +30,26 @@
         </div>
 
         <div>
+            <div id="tamañoContainer"></div>
             <label>Tamaño de la Pizza:</label>
-            <input type="radio" name="tamaño" value="pequeña" required> Pequeña (5€)
-            <input type="radio" name="tamaño" value="mediana" required> Mediana (10€)
-            <input type="radio" name="tamaño" value="grande" required> Grande (15€)
+            <!-- Aqui se cargarán los tamaños de la pizza -->
         </div>
 
         <div>
+            <div id="ingredientesContainer"></div>
             <label>Ingredientes de la Pizza:</label>
-            <input type="checkbox" name="ingredientes" value="tomate"> Tomate (+1€)
-            <input type="checkbox" name="ingredientes" value="queso"> Queso (+1€)
-            <input type="checkbox" name="ingredientes" value="jamón"> Jamón (+1€)
-            <input type="checkbox" name="ingredientes" value="champiñones"> Champiñones (+1€)
+            <!-- Aquí se cargarán los ingredientes de la pizza -->
         </div>
 
         <div>
-            <button type="button" onclick="calcularPrecio()">Procesar el Pedido</button>
+            <button type="button" onclick="procesarPedido()">Procesar el Pedido</button>
         </div>
 
         <div>
             <p>Total del Pedido: <span id="totalPedido">0€</span></p>
         </div>
+        <button id="actualizar">Actualizar</button>
+        <button id="submit">Enviar</button>
     </form>
 </body>
 </html>
