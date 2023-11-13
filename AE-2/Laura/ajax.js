@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const formulario = document.getElementById('pizzaForm');
     if (formulario) {
         formulario.addEventListener('submit', function (event) {
-            event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+            event.preventDefault(); // Evita que el formulario se envíe de forma automatica
             procesarPedido();
         });
     }
@@ -133,5 +133,5 @@ function procesarPedido() {
         return data.ingredientesP.find(i => i.ingrediente === ingrediente.value);
     });
 
-    calcularPrecio(); // Add this line to calculate and update the total price
+    calcularPrecio();
 }
