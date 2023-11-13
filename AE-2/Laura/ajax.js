@@ -1,7 +1,7 @@
 
 let data;
 
-const URL = "https://daw-edix-grupo-molon.github.io/DesarrolloWebEntornoCliente/AE-2/Laura/ajax.html";
+const URL = "https://daw-edix-grupo-molon.github.io/DesarrolloWebEntornoCliente/AE-2/Laura/";
 const RECURSO = "pizzeria.json";
 
 document.addEventListener("DOMContentLoaded", function () {
