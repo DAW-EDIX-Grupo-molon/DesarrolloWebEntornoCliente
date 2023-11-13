@@ -98,7 +98,7 @@ function procesarPedido () {
 }
 
 //Constantes simulando la conexión a servidor para la práctiva
-const URL = "http://127.0.0.1:5500/WsJS-DAW2/playground/3-AJAX/";
+const URL = "http://127.0.0.1:5500/DesarrolloWebEntornoCliente/AE-2/Ivan/";
 const RECURSO = "json/pizzeria.json";
 
 //Esta función nos permite mediante una petición http, acceder al JSON y traernos la información para acto seguido llamar a la función procesarRespuesta. 
