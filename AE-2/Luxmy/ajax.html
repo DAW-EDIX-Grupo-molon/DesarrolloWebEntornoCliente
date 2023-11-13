@@ -5,52 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarea 02</title>
-    <!-- Incluye el script con la URL correcta -->
     <script src="ajax.js" defer></script>
 </head>
 
 <body>
-    <div>
-        <form class="formulario" id="form">
-            <h1>Escoge tu pizza</h1>
-            <div>
-                <!-- Cajas de texto -->
-                <!-- Nombre-->
-                <div>
-                    <label for="nombre">Nombre: </label>
-                    <input type="text" name="nombre" id="nombre">
-                </div>
-                <!-- Telefono -->
-                <div>
-                    <label for="telefono">Telefono: </label>
-                    <input type="text" name="telefono" id="telefono">
-                </div>
-                <!-- Direccion -->
-                <div>
-                    <label for="direccion">Direccion: </label>
-                    <input type="text" name="direccion" id="direccion">
-                </div>
-                <!-- Email -->
-                <div>
-                    <label for="email">Email: </label>
-                    <input type="text" name="email" id="email">
-                </div>
-
-                <h3>Escoge el tamaño:</h3>
-                <!-- Radio buttons -->
-                <div id="tamañoContenedor">
-                    <!-- Aquí se añadirán los tamaños dinámicamente -->
-                </div>
-
-                <h3>Escoge los ingredientes:</h3>
-                <!-- Checkbox -->
-                <div id="ingredientesContenedor">
-                    <!-- Aquí se añadirán los ingredientes dinámicamente -->
-                </div>
-
-                <button onclick="refrescarDatos()">Refrescar</button>
-            </div>
-        </form>
+    <h2>Escoge tu pizza</h2>
+    <div id="contenedor">
+        <label for="nombre">Nombre</label>
+        <br>
+        <input type="text" id="nombre" name="nombre">
+        <br>
+        <label for="direccion">Direccion</label>
+        <br>
+        <input type="text" id="direccion" name="direccion">
+        <br>
+        <label for="telefono">Telefono</label>
+        <br>
+        <input type="text" id="telefono" name="telefono">
+        <br>
+        <label for="email">Email</label>
+        <br>
+        <input type="text" id="email" name="email">
+        <br>
+        <label for="tamañoContenedor">Escoge el tamaño:</label>
+        <!-- Aquí van los tamaños -->
+        <div id="tamañoContenedor"></div>
+        <label for="ingredientesContenedor">Escoge los ingredientes:</label>
+        <!-- Aquí van los ingredientes -->
+        <div id="ingredientesContenedor"></div>
+        <button id="refrescar" onclick="cargarDatos()">Refrescar</button>
+        <button id="submit" onclick="procesarPedido()">Procesar pedido</button>
+        <!-- Aquí va el resultado del pedido -->
+        <div id="resultado"></div>
     </div>
 </body>
 

@@ -32,7 +32,8 @@ function procesarRespuesta(jsonDoc) {
         let input = document.createElement('input');
         input.name = 'tamaños';
         input.type = 'radio';
-        input.value = tamaño.nombre;
+        input.id = tamaño.nombre;
+        input.value = tamaño.precio;
 
         let label = document.createElement('label');
         label.textContent = `${tamaño.nombre} (+${tamaño.precio}€)`;
@@ -42,7 +43,7 @@ function procesarRespuesta(jsonDoc) {
         tamañoContenedor.appendChild(input);
         tamañoContenedor.appendChild(label);
         tamañoContenedor.appendChild(br);
-    });
+    })
 
     // Cargar ingredientes
     let ingredientesContenedor = document.getElementById('ingredientesContenedor');
@@ -52,7 +53,8 @@ function procesarRespuesta(jsonDoc) {
         let input = document.createElement('input');
         input.name = 'ingredientes';
         input.type = 'checkbox';
-        input.value = ingrediente.nombre;
+        input.id = ingrediente.nombre;
+        input.value = ingrediente.precio;
 
         let label = document.createElement('label');
         label.textContent = `${ingrediente.nombre} (+${ingrediente.precio}€)`;
@@ -62,9 +64,33 @@ function procesarRespuesta(jsonDoc) {
         ingredientesContenedor.appendChild(input);
         ingredientesContenedor.appendChild(label);
         ingredientesContenedor.appendChild(br);
-    });
+    })
 
-    function refrescarDatos() {
-        cargarDatos();
-    }
 }
+
+    //Esta función procesa el pedido 
+function procesarPedido() {
+    let precioPizza = 0;
+    
+    let tamaños = document.getElementsByName("tamaños");
+    let ingredientes = document.getElementsByName("ingredientes");
+    
+    for (let i = 0; i < tamaños.length; i++) {
+        if (tamaños[i].checked) {
+            precioPizza += parseFloat(tamaños[i].value);
+            break;
+         }
+    }
+    
+    for (let i = 0; i < ingredientes.length; i++) {
+        if (ingredientes[i].checked) {
+            precioPizza += parseFloat(ingredientes[i].value);
+        }
+    }
+    
+    let resultado = document.getElementById('resultado');
+    resultado.innerText = "El precio del pedido es: " + precioPizza + "€";
+}
+
+document.getElementById('refrescar').addEventListener('click', cargarDatos);
+document.getElementById('submit').addEventListener('click', procesarPedido);
