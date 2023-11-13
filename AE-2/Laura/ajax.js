@@ -5,9 +5,15 @@ const URL = "http://127.0.0.1:5500/AE-2/Laura/";
 const RECURSO = "pizzeria.json";
 
 document.addEventListener("DOMContentLoaded", function () {
+    const formulario = document.getElementById('pizzaForm');
+    if (formulario) {
+        formulario.addEventListener('submit', function (event) {
+            event.preventDefault(); // Evita que el formulario se envíe de forma predeterminada
+            procesarPedido();
+        });
+    }
+
     cargar();
-    //actualizar.onclick = cargar;
-    submit.onclick = procesarPedido;
 });
 
 function cargar() {
@@ -127,45 +133,5 @@ function procesarPedido() {
         return data.ingredientesP.find(i => i.ingrediente === ingrediente.value);
     });
 
-    obtenerPreciosServidor(tamañoSeleccionado, ingredientesSeleccionados);
-
-}
-
-function obtenerPreciosServidor(tamañoPizza, ingredientesSeleccionados) {
-    const xmlHttp = new XMLHttpRequest();
-
-    xmlHttp.open('POST', URL + 'obtenerPrecios', true);
-    xmlHttp.setRequestHeader('Content-type', 'application/json');
-
-    const requestData = {
-        tamañoPizza: tamañoPizza.value,
-        ingredientes: ingredientesSeleccionados.map(ingrediente => ingrediente.ingrediente)
-    };
-
-    xmlHttp.onreadystatechange = function () {
-        if (this.readyState == 4) {
-            if (this.status == 200) {
-                const precios = JSON.parse(this.responseText);
-                calcularPrecioTotal(tamañoPizza, ingredientesSeleccionados, precios);
-            } else {
-                alert("Error al obtener precios del servidor");
-            }
-        }
-    };
-
-    xmlHttp.send(JSON.stringify(requestData));
-}
-
-
-function calcularPrecioTotal(tamañoPizza, ingredientesSeleccionados, precios) {
-    const precioBase = precios.precioBase || 0;
-
-    const precioIngredientes = ingredientesSeleccionados.reduce((total, ingrediente) => {
-        const precio = precios.ingredientes.find(i => i.ingrediente === ingrediente.ingrediente)?.precio || 0;
-        return total + precio;
-    }, 0);
-
-    const precioTotal = precioBase + precioIngredientes;
-
-    document.getElementById('totalPedido').textContent = precioTotal + '€';
+    calcularPrecio(); // Add this line to calculate and update the total price
 }
