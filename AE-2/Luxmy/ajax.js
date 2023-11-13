@@ -1,5 +1,5 @@
 // Simulamos BD y URL de destino
-const URL = "http://127.0.0.1:5500/AE-2/Luxmy/";
+const URL = "https://daw-edix-grupo-molon.github.io/DesarrolloWebEntornoCliente/AE-2/Luxmy/";
 const RECURSO = "pizzeria.json";
 
 
