@@ -1,0 +1,53 @@
+{
+    "pizzeria": {
+        "tamaños": [
+            {
+                "nombre": "Pequeña",
+                "precio": 5
+            },
+            {
+                "nombre": "Mediana",
+                "precio": 10
+            },
+            {
+                "nombre": "Grande",
+                "precio": 15
+            }
+        ],
+        "ingredientes": [
+            {
+                "nombre": "Peperoni",
+                "precio": 1
+            },
+            {
+                "nombre": "Bacon",
+                "precio": 1.50
+            },
+            {
+                "nombre": "Pollo",
+                "precio": 2
+            },
+            {
+                "nombre": "Cebolla",
+                "precio": 0.50
+            },
+            {
+                "nombre": "Queso",
+                "precio": 1
+            },
+            {
+                "nombre": "Pimiento",
+                "precio": 0.50
+            },
+            {
+                "nombre": "Jamon",
+                "precio": 0.60
+            },
+            {
+                "nombre": "4 Quesos",
+                "precio": 2.50
+            }
+        ]
+    }
+ }
+ 
