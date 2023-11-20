@@ -1,1 +1,12 @@
 <p>BienvenidoLogueate</p>
+
+<div>
+    <label for="username">Usuario</label>
+    <input type="text" name="username" id="username"/>
+    <label for="pass"></label>
+    <input type="password" name="password" id="password"/>
+    <button>Entrar</button>
+    <div>
+        <p [hidden]="incorrect">Usuario o contraseña incorrecto.</p>
+    </div>
+</div>
