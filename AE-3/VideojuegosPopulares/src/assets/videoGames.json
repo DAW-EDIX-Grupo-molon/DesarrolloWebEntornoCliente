@@ -1,0 +1,23 @@
+[
+    {
+        "_id": 1,
+        "title": "The Legend of Zelda: Breath of the Wild",
+        "company": "Nintendo",
+        "picture": "https://example.com/zelda_picture.jpg",
+        "score": 10
+    },
+    {
+        "_id": 2,
+        "title": "Red Dead Redemption 2",
+        "company": "Rockstar Games",
+        "picture": "https://example.com/rdr2_picture.jpg",
+        "score": 9.5
+    },
+    {
+        "_id": 3,
+        "title": "Spider-Man: Miles Morales",
+        "company": "Insomniac Games",
+        "picture": "https://example.com/spiderman_picture.jpg",
+        "score": 9
+    }
+]
