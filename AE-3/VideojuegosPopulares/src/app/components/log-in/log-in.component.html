@@ -2,10 +2,10 @@
 
 <div>
     <label for="username">Usuario</label>
-    <input type="text" name="username" id="username"/>
+    <input type="text" id="username" [(ngModel)]="username"/>
     <label for="pass"></label>
-    <input type="password" name="password" id="password"/>
-    <button>Entrar</button>
+    <input type="password" id="password" [(ngModel)]="password"/>
+    <button (click)="login()">Entrar</button>
     <div>
         <p [hidden]="incorrect">Usuario o contraseña incorrecto.</p>
     </div>

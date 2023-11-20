@@ -18,11 +18,10 @@ export class AuthService {
 
     if (user) {
       this.isAuthenticated = true;
-      return true;
     } else {
       this.isAuthenticated = false;
-      return false;
     }
+    return this.isAuthenticated;
   }
 
   logout(): void {

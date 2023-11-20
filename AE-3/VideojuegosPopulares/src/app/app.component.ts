@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -12,5 +13,14 @@ import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  constructor(private authService: AuthService) {
+
+  }
+
+  isAuthenticated(): boolean {
+    return this.authService.isAuthenticated;
+  }
+
   title = 'VideojuegosPopulares';
 }
