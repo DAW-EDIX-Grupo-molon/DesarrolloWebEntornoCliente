@@ -1,1 +1,14 @@
 <h1>AQUI VA UNA TABLA CON TODOS LOS VIDEO JUEGOS</h1>
+<table class="default">
+    <tr>
+      <th>Identificador</th>
+      <th>Nombre</th>
+      <th>Puntuación</th>
+    </tr>
+    <tr *ngFor="let videoGame of gamesList">
+      <td >{{videoGame.getId()}}</td>
+      <td >{{videoGame.title}}</td>
+      <td >{{videoGame.score}}</td>
+    </tr>
+  
+  </table>

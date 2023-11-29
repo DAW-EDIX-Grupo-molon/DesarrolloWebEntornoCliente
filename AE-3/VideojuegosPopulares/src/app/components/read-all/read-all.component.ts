@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { VideoGame } from '../../entities/VideoGame';
+import { VideoGameService } from '../../services/videogame.service';
 
 @Component({
   selector: 'app-read-all',
@@ -9,14 +10,9 @@ import { VideoGame } from '../../entities/VideoGame';
   templateUrl: './read-all.component.html',
   styleUrl: './read-all.component.css'
 })
-export class ReadAllComponent implements OnInit{
+export class ReadAllComponent {
 
-  gamesList : VideoGame[] = [];
-  
-
-
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+  constructor(private videoGamesService : VideoGameService){}
+  gamesList : VideoGame[] = this.videoGamesService.getAllGames();
 
 }
