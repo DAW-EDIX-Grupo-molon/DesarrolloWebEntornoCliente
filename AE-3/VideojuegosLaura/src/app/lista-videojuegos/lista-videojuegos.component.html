@@ -1,0 +1,6 @@
+<h2>Lista de Videojuegos</h2>
+<ul>
+  <li *ngFor="let juego of videojuegos">
+    <a routerLink="/detalle/{{ juego.id }}">{{ juego.id }} - {{ juego.titulo }} - Valoración: {{ juego.valoracionMedia }}</a>
+  </li>
+</ul>
