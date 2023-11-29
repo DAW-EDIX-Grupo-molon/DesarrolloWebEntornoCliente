@@ -11,17 +11,22 @@ import { Router } from '@angular/router';
   templateUrl: './read-all.component.html',
   styleUrl: './read-all.component.css'
 })
-export class ReadAllComponent {
+export class ReadAllComponent implements OnInit {
 
-  constructor(private videoGamesService : VideoGameService, private router: Router){}
-  gamesList : VideoGame[] = this.videoGamesService.getAllGames();
+  constructor(private videoGamesService: VideoGameService, private router: Router) { }
 
-  public selectElement(videoGame:VideoGame) : void{
-    console.log("Seleccionando...")
+  gamesList: VideoGame[] = [];
 
+  public selectElement(videoGame: VideoGame): void {
     let id = videoGame.id;
 
     this.router.navigate(["/detail", id])
+  }
+
+  ngOnInit(): void {
+    this.videoGamesService.getAllGames().subscribe(
+      (videgoGames) => this.gamesList = videgoGames
+    )
   }
 
 }

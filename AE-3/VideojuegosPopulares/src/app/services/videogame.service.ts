@@ -1,24 +1,23 @@
 import { Injectable } from '@angular/core';
 import { VideoGame } from '../entities/VideoGame';
+import { HttpClient } from '@angular/common/http';
+import { Observable, map, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VideoGameService {
 
-private videoGames = [
-  new VideoGame(1, "World of Warcraft", "Blizzard", "myurl.wow", 8),
-  new VideoGame(2, "Spiderman", "Sony", "myurl.spiderman", 10)
-]
+private sourceUrl = "assets/videoGames.json";
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getAllGames():VideoGame[]{
-    return this.videoGames
+  getAllGames():Observable<VideoGame[]>{
+     return this.http.get<VideoGame[]>(this.sourceUrl);
   }
 
-  getById(id: number): VideoGame | undefined {
-    return this.videoGames.find((videoGame) => videoGame.id == id)
-  }
+  getById(id: number):Observable<VideoGame>{
+    return this.getAllGames().pipe(map(videoGames => videoGames.find(videoGame => videoGame.id == id)!))
+ }
 
 }
