@@ -3,21 +3,21 @@
         "id": 1,
         "title": "The Legend of Zelda: Breath of the Wild",
         "company": "Nintendo",
-        "picture": "https://example.com/zelda_picture.jpg",
+        "picture": "/assets/zelda.jpg",
         "score": 10
     },
     {
         "id": 2,
         "title": "Red Dead Redemption 2",
         "company": "Rockstar Games",
-        "picture": "https://example.com/rdr2_picture.jpg",
+        "picture": "/assets/reddead.jpg",
         "score": 9.5
     },
     {
         "id": 3,
         "title": "Spider-Man: Miles Morales",
         "company": "Insomniac Games",
-        "picture": "https://example.com/spiderman_picture.jpg",
+        "picture": "/assets/spiderman.jpg",
         "score": 9
     }
 ]

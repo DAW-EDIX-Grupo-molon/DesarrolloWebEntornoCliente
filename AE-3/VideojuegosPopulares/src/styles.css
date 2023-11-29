@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+
+:host {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #A3E4D7 ;
+    margin: 0;
+    padding: 0;
+}

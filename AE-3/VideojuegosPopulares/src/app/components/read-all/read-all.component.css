@@ -1,0 +1,42 @@
+
+h1 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+
+  table.default {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+
+  table.default th {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  /* Estilo para las filas de la tabla (alternando colores) */
+  table.default tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+/* Estilo para las filas de la tabla (alternando colores) */
+table.default tr:nth-child(odd) {
+  background-color: #aaaaaa;
+}
+
+  /* Estilo para las celdas de la tabla */
+  table.default td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Cambiar el cursor al pasar el ratón sobre las filas de la tabla */
+  table.default tr:hover {
+    background-color: #66c2ff;
+    cursor: pointer;
+  }
