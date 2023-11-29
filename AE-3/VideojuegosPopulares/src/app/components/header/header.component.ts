@@ -11,13 +11,4 @@ import { userInfo } from 'os';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  constructor(private authService: AuthService) {
-    
-  }
-
-  isAuthenticated(): boolean {
-    return this.authService.isAuthenticated;
-  }
-
-  //Si is this.authService.isAuthenticated es true cojo el usuario del componente login y lo devuelvo en el h1
 }

@@ -1,3 +1,21 @@
-<p>detail works!</p>
-<h1>AQUI TENGO QUE PONER TODO EL DETALLE DEL VIDEO JUEGO QUE PInCHE</h1>
-<h2>tengo un boton para volver al componente readAll</h2>
+
+<h2>DETALLE DEL VIDEO JUEGO</h2>
+
+<table class="default">
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Company</th>
+      <th>Picture</th>
+      <th>Score</th>
+    </tr>
+    <tr>
+      <td>{{videoGame?.id}}</td>
+      <td>{{videoGame?.title}}</td>
+      <td>{{videoGame?.company}}</td>
+      <td><img src="{{videoGame?.picture}}" alt="imagen del juego"></td>
+      <td>{{videoGame?.score}}</td>
+    </tr>
+  </table>
+
+  <button (click)="goBack()">Volver</button>

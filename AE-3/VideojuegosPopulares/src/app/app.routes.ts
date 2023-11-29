@@ -10,7 +10,7 @@ import { NgModule } from '@angular/core';
 export const routes: Routes = [
     {path : '', component :  LogInComponent},
     {path : 'list', component : ReadAllComponent, canActivate: [authGuard]},
-    {path : 'detail', component : DetailComponent, canActivate: [authGuard]},
+    {path : 'detail/:id', component : DetailComponent, canActivate: [authGuard]},
     {path : 'contact', component : ContactComponent, canActivate: [authGuard]},
     {path : 'about', component : AboutUsComponent, canActivate: [authGuard]},
 ];

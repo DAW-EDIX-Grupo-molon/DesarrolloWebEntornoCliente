@@ -12,12 +12,14 @@ export class AuthService {
   ];
 
   isAuthenticated = false;
+  username = '';
 
   login(username: string, password: string): boolean {
     const user = this.users.find(u => u.username === username && u.password === password);
 
     if (user) {
       this.isAuthenticated = true;
+      this.username = username;
     } else {
       this.isAuthenticated = false;
     }

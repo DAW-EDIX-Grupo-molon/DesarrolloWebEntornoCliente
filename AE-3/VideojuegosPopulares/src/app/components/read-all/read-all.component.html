@@ -5,8 +5,8 @@
       <th>Nombre</th>
       <th>Puntuación</th>
     </tr>
-    <tr *ngFor="let videoGame of gamesList">
-      <td >{{videoGame.getId()}}</td>
+    <tr *ngFor="let videoGame of gamesList" (click)="selectElement(videoGame)">
+      <td >{{videoGame.id}}</td>
       <td >{{videoGame.title}}</td>
       <td >{{videoGame.score}}</td>
     </tr>
