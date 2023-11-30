@@ -1,0 +1,6 @@
+<div *ngIf="currentUser">
+    ¡Bienvenido, {{ currentUser?.username }}!
+  </div>
+  <div *ngIf="!currentUser">
+    Usuario no autenticado
+  </div>
