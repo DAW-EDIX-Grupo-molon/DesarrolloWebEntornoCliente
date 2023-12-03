@@ -1,0 +1,18 @@
+.carruselGames {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+@media screen and (min-width: 992px) {
+    .carruselGames {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0px;
+    }
+
+    .widthCard{
+        width: 32%;
+    }
+}

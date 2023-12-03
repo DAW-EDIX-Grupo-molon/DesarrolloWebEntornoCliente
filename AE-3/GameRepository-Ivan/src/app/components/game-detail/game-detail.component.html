@@ -1,0 +1,19 @@
+<div class="fullContainer">
+    <div class="container">
+        <div class="imgTituloContainer">
+            <div class="imgContainer">
+                <img [src]="'assets/images/' + game?.imagen" alt="">
+            </div>
+            <div class="titulo">
+                <h3>{{game?.titulo}}</h3>
+            </div>
+        </div>
+        <div class="mt3">
+            <h4>Datos del Juego</h4>
+            <p>Identificador: {{game?.idGame}}</p>
+            <p>compañía: {{game?.companyia}}</p>
+            <p>valoración: {{game?.valoracion}}</p>
+        </div>
+    </div>
+    <app-boton-atras></app-boton-atras>
+</div>

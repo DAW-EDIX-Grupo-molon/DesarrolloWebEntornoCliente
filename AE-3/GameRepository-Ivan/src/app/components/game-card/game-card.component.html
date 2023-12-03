@@ -1,0 +1,14 @@
+<div class="game-card">
+  <a [routerLink]="[ '/detalle', game.idGame]">
+    <div class="imgContainer">
+      <img [src]="'assets/images/' + game.imagen" alt="{{ game.titulo }} Image">
+    </div>
+    <div class="infoContainer mt3">
+      <div class="info">
+        <h3>{{ game.titulo }}</h3>
+        <p>Compañía: {{ game.companyia }}</p>
+        <p>Valoración: {{ game.valoracion }}</p>
+      </div>
+    </div>
+  </a>
+</div>

@@ -1,0 +1,36 @@
+
+
+.imgContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 350px;
+}
+
+.imgContainer img {
+    width: 100%;
+}
+
+.imgTituloContainer{
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.titulo {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 0;
+    padding: 25px;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0.00) 0%, rgba(0, 0, 0, 0.00) 0.01%, #252525 100%, rgba(37, 37, 37, 0.68) 100%);
+}
+
+.titulo h3 {
+    font-family: 'Oswald',sans-serif;
+    font-size: 3rem;
+    color: white;
+}

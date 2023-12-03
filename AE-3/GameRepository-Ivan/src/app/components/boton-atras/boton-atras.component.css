@@ -1,0 +1,15 @@
+.botonAtras {
+    border: 2px solid black;
+    color: black;
+    font-family: 'roboto',sans-serif;
+    background-color: transparent;
+    padding: .3rem 2rem;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.botonAtras:hover {
+    border: 2px solid rgba(84, 4, 255, 1);
+    color: rgba(84, 4, 255, 1);
+    border-radius: 10px;
+}
