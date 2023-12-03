@@ -89,11 +89,6 @@ export class UserService {
     
   }
 
-  logout() {
-    window.location.reload();
-    return false
-  }
-
   ngOnInit(): void {
   }
 
