@@ -1,0 +1,35 @@
+v/* videojuegolista.component.css */
+
+/* Estilos para el contenedor principal */
+.fullContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Estilos para el encabezado de bienvenida */
+  .fullContainer h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para la lista de juegos */
+  .listaVideojuegos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Estilos para cada elemento de juego */
+  .videojuego {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  
+  /* Estilos para el título del juego en la lista */
+  .videojuego p:first-child {
+    font-weight: bold;
+  }
+  

@@ -1,0 +1,20 @@
+.contacto-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .contacto-container .titulo h2 {
+    font-size: 2em;
+    color: #28a745; 
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .contacto-container .cuerpo p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  

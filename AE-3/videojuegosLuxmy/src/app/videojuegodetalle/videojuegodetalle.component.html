@@ -1,0 +1,11 @@
+<div class="detalle-container">
+    <h3>Detalles del Videojuego</h3>
+    <div *ngIf="videojuego">
+      <p>ID: {{ videojuego.id }}</p>
+      <p>Título: {{ videojuego.titulo }}</p>
+      <p>Compañía: {{ videojuego._compania }}</p>
+      <p>Valoración Media: {{ videojuego.valoracionMedia }}</p>
+      <img [src]="videojuego.imagen">
+    </div>
+    <button (click)="volver()">Volver</button>
+  </div>

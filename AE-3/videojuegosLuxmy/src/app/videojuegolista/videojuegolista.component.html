@@ -1,0 +1,13 @@
+<div class="fullContainer">
+  <h3>Bienvenido: </h3>
+  <ul class="listaVideojuegos">
+    <li *ngFor="let videojuego of listaVideojuegos" class="videojuego">
+      <a [routerLink]="['/detalle', videojuego.id]">
+        <p>ID: {{ videojuego.id }}</p>
+        <p>Título: {{ videojuego.titulo }}</p>
+        <p>Valoración Media: {{ videojuego.valoracionMedia }}</p>
+        <!-- Otros detalles del videojuego si es necesario -->
+      </a>
+    </li>
+  </ul>
+</div>
