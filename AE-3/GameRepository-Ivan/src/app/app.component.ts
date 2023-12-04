@@ -15,6 +15,10 @@ export class AppComponent {
 
   constructor (private userService: UserService){}
 
+  /**
+   * Función de control del proceso de login, si devuelve false el login no se habrá efectuado y devolverá false, en caso contrario devolverá true.
+   * @returns boolean
+   */
   logged():boolean {
     return this.userService.usuarioValido
   }

@@ -1,5 +1,6 @@
 export class Game {
 
+    //Atributos de la clase Game
     private _idGame: number = 0;
     private _titulo: string = "";
     private _companyia: string = "";
@@ -45,6 +46,7 @@ export class Game {
     constructor () {
     }
 
+    //toString
     public toString():string {
         return `ID: ${this._idGame} | Título: ${this._titulo} | Compañía: ${this._companyia} | URL imagen: ${this._imagen} | Valoración: ${this._valoracion}`
     }

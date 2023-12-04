@@ -9,6 +9,9 @@ export class GameService {
   private contadorId : number = 1;
   private listGames:Game[] = []
 
+  /**
+   * Monta 3 objetos de tipo Game y los añade a la lista listGames, a modo de simulación de BBDD.
+   */
   constructor () {
 
     let game:Game
@@ -39,10 +42,19 @@ export class GameService {
 
   }
 
+  /**
+   * Método que devuelve la listGames para poder trabajar con ella.
+   * @returns Game[]
+   */
   listar():Game[] {
     return this.listGames;
   }
 
+  /**
+   * Recorre la lista listGames la cual contiene los objetos Game y compara el id pasado con el de los objetos, si hay una coincidencia devuelve dicho objeto y sino devuelve null.
+   * @param id : number
+   * @returns Game | null
+   */
   buscarPorId (id:number):Game | null {
     for (let game of this.listGames) {
       if(game.idGame==id){

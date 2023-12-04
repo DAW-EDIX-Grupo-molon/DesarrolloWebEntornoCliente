@@ -21,6 +21,10 @@ export class LoginComponent implements OnInit {
     this.listUsers=_userService.listar()
   }
 
+  /**
+   * Al ejecutar la función almacenará en una constante el valor pasado por la finción própia de la clase UserService, la cual validará el usuario pasado.
+   * Después ejecuta una if el cual nos direcciona a una ruta para cargar el componente biblioteca o en su defecto volveremos al login.
+   */
   login() {
     const validacion = this._userService.login(this.userId,this.password)
 

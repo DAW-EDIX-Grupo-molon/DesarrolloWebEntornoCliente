@@ -1,5 +1,6 @@
 export class User {
 
+    //Atributos de la clase User
     private _userMail: string
     private _password: string
     private _userName: string
@@ -34,6 +35,7 @@ export class User {
         this._access = value
     }
 
+    //toString
     public toString():string {
         return `Mail: ${this._userMail} | Username: ${this._userName}`
     }
